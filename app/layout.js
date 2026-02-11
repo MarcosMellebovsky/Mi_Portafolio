@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Portfolio de Marcos Mellebovsky",
+  title: "Marcos Mellebovsky - Web Developer",
   description: "Bienvenido a mi portfolio, donde comparto mis proyectos y habilidades en desarrollo web. Aquí encontrarás una selección de mis trabajos más destacados, desde aplicaciones web hasta sitios estáticos, demostrando mi pasión por la tecnología y el diseño. ¡Explora y descubre lo que puedo ofrecer!",
 };
 
