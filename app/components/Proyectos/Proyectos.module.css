@@ -94,5 +94,52 @@
   
   .proyectos h2 {
     font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .proyectos-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .proyecto-card {
+    padding: 1.5rem;
+  }
+  
+  .proyecto-card h3 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .proyectos {
+    padding: 2rem 1rem;
+  }
+  
+  .proyectos h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .proyectos-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .proyecto-card {
+    padding: 1rem;
+  }
+  
+  .proyecto-card h3 {
+    font-size: 1rem;
+  }
+  
+  .proyecto-card p {
+    font-size: 0.9rem;
+  }
+  
+  .proyecto-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
   }
 }

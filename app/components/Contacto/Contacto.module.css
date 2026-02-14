@@ -1,5 +1,5 @@
 .contacto {
-  padding: 6rem 2rem;
+  padding: 4rem 2rem;
   background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
   color: white;
   text-align: center;
@@ -18,47 +18,184 @@
   font-size: 1.1rem;
   color: #b0b0b0;
   max-width: 600px;
-  margin: 0 auto 3rem;
+  margin: 0 auto 2rem;
   line-height: 1.6;
 }
 
-.contacto-links {
+.contacto-form {
+  max-width: 800px;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.form-group {
   display: flex;
-  gap: 2rem;
-  justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: column;
+  text-align: left;
 }
 
-.contacto-link {
-  padding: 0.8rem 2rem;
-  background: rgba(0, 212, 255, 0.15);
-  color: #00d4ff;
-  text-decoration: none;
-  border-radius: 8px;
+.form-group:nth-child(3) {
+  grid-column: 1 / -1;
+}
+
+.form-group:nth-child(4) {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
   font-weight: 600;
-  border: 2px solid rgba(0, 212, 255, 0.3);
-  transition: all 0.3s ease;
-  display: inline-block;
+  margin-bottom: 0.5rem;
+  color: #00d4ff;
+  font-size: 1rem;
 }
 
-.contacto-link:hover {
-  background: #00d4ff;
-  color: #1a1a2e;
+.form-group input,
+.form-group textarea {
+  padding: 0.8rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(0, 212, 255, 0.3);
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  resize: vertical;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.12);
   border-color: #00d4ff;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+}
+
+.submit-btn {
+  grid-column: 1 / -1;
+  padding: 0.8rem 2rem;
+  background: linear-gradient(135deg, #00d4ff, #0099ff);
+  color: #1a1a2e;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.submit-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+  box-shadow: 0 12px 35px rgba(0, 212, 255, 0.4);
+}
+
+.submit-btn:active {
+  transform: translateY(-1px);
+}
+
+.error {
+  grid-column: 1 / -1;
+  color: #ff6b6b;
+  font-size: 0.95rem;
+  padding: 1rem;
+  background: rgba(255, 107, 107, 0.15);
+  border-radius: 8px;
+  margin: 0;
+}
+
+.exito {
+  grid-column: 1 / -1;
+  color: #51cf66;
+  font-size: 0.95rem;
+  padding: 1rem;
+  background: rgba(81, 207, 102, 0.15);
+  border-radius: 8px;
+  margin: 0;
 }
 
 @media (max-width: 768px) {
   .contacto {
-    padding: 4rem 1.5rem;
+    padding: 3rem 1.5rem;
   }
   
   .contacto h2 {
     font-size: 2rem;
+    margin-bottom: 1rem;
   }
   
-  .contacto-links {
+  .contacto-description {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .contacto-form {
+    grid-template-columns: 1fr;
     gap: 1rem;
+    margin: 1.5rem auto;
+  }
+  
+  .form-group label {
+    font-size: 0.95rem;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 0.8rem;
+    font-size: 0.95rem;
+  }
+  
+  .submit-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contacto {
+    padding: 2rem 1rem;
+  }
+  
+  .contacto h2 {
+    font-size: 1.5rem;
+  }
+  
+  .contacto-description {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+  
+  .contacto-form {
+    gap: 0.8rem;
+    margin: 1rem auto;
+  }
+  
+  .form-group label {
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 0.7rem;
+    font-size: 0.9rem;
+  }
+  
+  .submit-btn {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  
+  .error,
+  .exito {
+    font-size: 0.85rem;
+    padding: 0.8rem;
   }
 }
