@@ -21,23 +21,35 @@ export default function Contacto() {
     }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError('');
-    
-    if (!formData.nombre || !formData.email || !formData.asunto || !formData.mensaje) {
-      setError('Por favor completa todos los campos');
-      return;
-    }
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setError('');
 
-    try {
-      setEnviado(true);
-      setFormData({ nombre: '', email: '', asunto: '', mensaje: '' });
-      setTimeout(() => setEnviado(false), 5000);
-    } catch (err) {
-      setError('Error al enviar el mensaje');
-    }
-  };
+  if (!formData.nombre || !formData.email || !formData.asunto || !formData.mensaje) {
+    setError('Por favor completa todos los campos');
+    return;
+  }
+
+  try {
+
+    await fetch("https://marcosmellebovsky.app.n8n.cloud/webhook-test/c23d37e5-dba1-42d0-bc4a-ec9eaa20fbf3", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(formData)
+    });
+
+    setEnviado(true);
+    setFormData({ nombre: '', email: '', asunto: '', mensaje: '' });
+
+    setTimeout(() => setEnviado(false), 5000);
+
+  } catch (err) {
+    setError('Error al enviar el mensaje');
+  }
+};
+
 
   return (
     <section id="contacto" className={styles.contacto}>

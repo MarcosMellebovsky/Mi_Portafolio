@@ -21,9 +21,9 @@ export default function Footer() {
         <div className={styles.box}>
           <h2>SEGUIME</h2>
           <div className={styles.red_social}>
-            <a href="#"><i className="fa-brands fa-linkedin"></i></a>
-            <a href="#"><i className="fa-brands fa-github"></i></a>
-            <a href="#"><i className="fa-brands fa-whatsapp"></i></a>
+            <a href="https://www.linkedin.com/in/marcos-mellebovsky/" target="_blank" ><i className="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/MarcosMellebovsky" target="_blank"><i className="fa-brands fa-github" target="_blank" ></i></a>
+            <a href="https://web.whatsapp.com/" target="_blank"><i className="fa-brands fa-whatsapp" target="_blank" ></i></a>
           </div>
         </div>
       </div>
